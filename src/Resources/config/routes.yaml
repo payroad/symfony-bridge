@@ -1,0 +1,3 @@
+payroad_webhooks:
+    resource: '../../Controller/'
+    type: attribute

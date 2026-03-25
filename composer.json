@@ -1,0 +1,22 @@
+{
+    "name": "payroad/symfony-bridge",
+    "description": "Symfony integration bridge for the Payroad payment platform",
+    "type": "symfony-bundle",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.2",
+        "payroad/payroad-core": "@dev",
+        "symfony/framework-bundle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Payroad\\Bridge\\Symfony\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../payroad-core"
+        }
+    ]
+}

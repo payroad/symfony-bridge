@@ -1,0 +1,15 @@
+services:
+    Payroad\Bridge\Symfony\Provider\ProviderRegistry:
+        arguments:
+            $providers: !tagged_iterator payroad.provider
+        public: true
+
+    Payroad\Port\Provider\ProviderRegistryInterface:
+        alias: Payroad\Bridge\Symfony\Provider\ProviderRegistry
+
+    Payroad\Bridge\Symfony\Controller\WebhookController:
+        autowire: true
+        arguments:
+            $verifiers: !tagged_iterator payroad.webhook_verifier
+        tags: ['controller.service_arguments']
+        public: true
